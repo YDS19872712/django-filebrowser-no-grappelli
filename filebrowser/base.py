@@ -11,7 +11,7 @@ from django.conf import settings
 from filebrowser.settings import *
 from filebrowser.conf import fb_settings
 from filebrowser.functions import get_file_type, url_join, is_selectable, get_version_path
-from django.utils.encoding import force_unicode
+from django.utils.encoding import force_text
 
 # PIL import
 if STRICT_PIL:
@@ -44,7 +44,7 @@ class FileObject(object):
         """
         Filesize.
         """
-        path = force_unicode(self.path)
+        path = force_text(self.path)
         if os.path.isfile(os.path.join(fb_settings.MEDIA_ROOT, path)) or os.path.isdir(os.path.join(fb_settings.MEDIA_ROOT, path)):
             return os.path.getsize(os.path.join(fb_settings.MEDIA_ROOT, path))
         return ""
@@ -110,7 +110,7 @@ class FileObject(object):
         """
         Full URL including MEDIA_URL.
         """
-        return force_unicode(url_join(fb_settings.MEDIA_URL, self.url_rel))
+        return force_text(url_join(fb_settings.MEDIA_URL, self.url_rel))
     url_full = property(_url_full)
     
     def _url_save(self):
@@ -196,12 +196,12 @@ class FileObject(object):
     is_empty = property(_is_empty)
     
     def __repr__(self):
-        return force_unicode(self.url_save)
+        return force_text(self.url_save)
     
     def __str__(self):
-        return force_unicode(self.url_save)
+        return force_text(self.url_save)
     
     def __unicode__(self):
-        return force_unicode(self.url_save)
+        return force_text(self.url_save)
 
 
