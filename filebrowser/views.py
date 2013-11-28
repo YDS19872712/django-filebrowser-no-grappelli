@@ -380,7 +380,7 @@ def delete(request):
                 messages.success(request,message=msg)
                 redirect_url = reverse("fb_browse") + query_helper(query, "", "filename,filetype")
                 return HttpResponseRedirect(redirect_url)
-            except OSError, e:
+            except OSError(e):
                 # todo: define error message
                 msg = unicode(e)
 
@@ -444,7 +444,7 @@ def rename(request):
                 messages.success(request,message=msg)
                 redirect_url = reverse("fb_browse") + query_helper(query, "", "filename")
                 return HttpResponseRedirect(redirect_url)
-            except OSError, (errno, strerror):
+            except OSError(errno, strerror):
                 form.errors['name'] = forms.util.ErrorList([_('Error.')])
     else:
         form = RenameForm(abs_path, file_extension)
