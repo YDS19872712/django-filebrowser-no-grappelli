@@ -3,7 +3,7 @@
 # imports
 import os, re, decimal
 from time import gmtime, strftime, localtime, mktime, time
-from urlparse import urlparse
+from urllib import parse as urlparse
 
 # django imports
 from django.utils.translation import ugettext as _
