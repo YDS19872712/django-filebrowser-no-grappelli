@@ -40,7 +40,7 @@ from filebrowser.decorators import flash_login_required
 filter_re = []
 for exp in EXCLUDE:
    filter_re.append(re.compile(exp))
-for k,v in VERSIONS.iteritems():
+for k,v in VERSIONS.items():
     exp = (r'_%s.(%s)') % (k, '|'.join(EXTENSION_LIST))
     filter_re.append(re.compile(exp))
 
@@ -80,7 +80,7 @@ def browse(request):
     # INITIAL VARIABLES
     results_var = {'results_total': 0, 'results_current': 0, 'delete_total': 0, 'images_total': 0, 'select_total': 0 }
     counter = {}
-    for k,v in EXTENSIONS.iteritems():
+    for k,v in EXTENSIONS.items():
         counter[k] = 0
     
     dir_list = os.listdir(abs_path)
