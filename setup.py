@@ -6,7 +6,7 @@ setup(
     description='Media-Management with the Django Admin-Interface.',
     author='Patrick Kranzlmueller',
     author_email='patrick@vonautomatisch.at',
-    url='https://github.com/wardi/django-filebrowser-no-grappelli',
+    url='https://github.com/YDS19872712/django-filebrowser-no-grappelli',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
