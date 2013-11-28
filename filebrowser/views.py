@@ -194,7 +194,7 @@ def mkdir(request):
                 filebrowser_pre_createdir.send(sender=request, path=path, dirname=_new_dir_name)
                 # CREATE FOLDER
                 os.mkdir(server_path)
-                os.chmod(server_path, 0775)
+                os.chmod(server_path, 0o775)
                 # POST CREATE SIGNAL
                 filebrowser_post_createdir.send(sender=request, path=path, dirname=_new_dir_name)
                 # MESSAGE & REDIRECT
